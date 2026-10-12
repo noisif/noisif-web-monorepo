@@ -6,8 +6,10 @@
   "scripts": {
     "dashboard:dev": "pnpm --filter dashboard run dev",
     "dashboard:build": "pnpm --filter dashboard run build",
+    "dashboard:preview": "pnpm --filter dashboard run preview",
     "landing-page:dev": "pnpm --filter landing-page run dev",
     "landing-page:build": "pnpm --filter landing-page run build",
+    "landing-page:preview": "pnpm --filter landing-page run preview",
     "copyright": "noisif-copyright",
     "prepare": "husky",
     "format": "pnpm run copyright && prettier --write .",
