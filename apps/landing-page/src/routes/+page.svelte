@@ -16,8 +16,6 @@
   - Please refer to the LICENSE file in the root directory for full restrictions.
 -->
 <script lang="ts">
-  import { Button } from '@noisif/ui';
 </script>
 
-<h1>NOISIF LANDING PAGE</h1>
-<Button>Click me!</Button>
+<h1 class="text-5xl font-medium">NOISIF LANDING PAGE</h1>
