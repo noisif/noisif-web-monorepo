@@ -1,4 +1,13 @@
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+#!/usr/bin/env bash
 
+export NVM_DIR="$HOME/.nvm"
+if [ -s "$NVM_DIR/nvm.sh" ]; then
+  . "$NVM_DIR/nvm.sh"
+fi
+
+if ! command -v pnpm >/dev/null 2>&1; then
+  export PATH="$HOME/.local/share/pnpm:$HOME/.npm-global/bin:$PATH"
+fi
+
+pnpm run copyright
 pnpm exec lint-staged
