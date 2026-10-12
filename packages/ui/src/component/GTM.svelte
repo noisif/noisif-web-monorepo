@@ -1,0 +1,63 @@
+<!--
+  - Copyright (c) 2022-2026 NOISIF. All Rights Reserved.
+  -
+  - NOTICE: This source code is publicly available for reference
+  - and educational purposes only. It is NOT open-source software.
+  -
+  - You are granted permission to view this code. However, you are strictly
+  - PROHIBITED from copying, modifying, or merging this code into other software,
+  - distributing, publishing, or sublicensing this code, using this code for
+  - commercial purposes or in production environments.
+  -
+  - THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER
+  - EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF
+  - MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+  -
+  - Please refer to the LICENSE file in the root directory for full restrictions.
+-->
+<script lang="ts">
+  import { onMount } from 'svelte';
+
+  let { gtmId }: { gtmId?: string } = $props();
+
+  const initDataLayer = () => {
+    const w = window as unknown as Window & { dataLayer: Record<string, unknown>[] };
+    w.dataLayer = w.dataLayer || [];
+    w.dataLayer.push({
+      'gtm.start': new Date().getTime(),
+      event: 'gtm.js'
+    });
+  };
+
+  const injectGtmScript = (id: string) => {
+    if (document.getElementById('gtm-script')) {
+      return;
+    }
+    const script = document.createElement('script');
+    script.id = 'gtm-script';
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtm.js?id=${id}`;
+
+    document.head.appendChild(script);
+  };
+
+  onMount(() => {
+    if (gtmId) {
+      console.log('Uruchamiam GTM onMount. ID to:', gtmId);
+      initDataLayer();
+      injectGtmScript(gtmId);
+    }
+  });
+</script>
+
+{#if gtmId}
+  <noscript>
+    <iframe
+      src="https://www.googletagmanager.com/ns.html?id={gtmId}"
+      height="0"
+      width="0"
+      style="display:none;visibility:hidden"
+      title="gtm"
+    ></iframe>
+  </noscript>
+{/if}

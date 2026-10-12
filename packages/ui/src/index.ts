@@ -16,3 +16,4 @@
  * Please refer to the LICENSE file in the root directory for full restrictions.
  */
 export { default as Button } from './component/Button.svelte';
+export { default as GTM } from './component/GTM.svelte';

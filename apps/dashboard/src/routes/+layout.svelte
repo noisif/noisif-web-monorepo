@@ -18,6 +18,8 @@
 <script lang="ts">
   import '@noisif/tailwind-config/global.css';
   import favicon from '#lib/assets/favicon.svg';
+  import { PUBLIC_GTM_ID } from '$app/env/public';
+  import { GTM } from '@noisif/ui';
   import type { LayoutProps } from './$types';
 
   let { children }: LayoutProps = $props();
@@ -27,4 +29,5 @@
   <link rel="icon" href={favicon} />
 </svelte:head>
 
+<GTM gtmId={PUBLIC_GTM_ID} />
 {@render children()}

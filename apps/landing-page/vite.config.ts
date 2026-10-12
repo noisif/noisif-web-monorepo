@@ -15,6 +15,7 @@
  *
  * Please refer to the LICENSE file in the root directory for full restrictions.
  */
+import { sentrySvelteKit } from '@sentry/sveltekit/vite';
 import adapter from '@sveltejs/adapter-node';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
@@ -29,6 +30,11 @@ export default defineConfig({
     }
   },
   plugins: [
+    sentrySvelteKit({
+      org: 'noisif',
+      project: 'noisif-dashboard',
+      authToken: process.env.SENTRY_AUTH_TOKEN
+    }),
     sveltekit({
       compilerOptions: {
         // force runes mode for the project, except for libraries
