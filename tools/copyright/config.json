@@ -1,0 +1,35 @@
+{
+  "ignoreDirs": ["node_modules", ".svelte-kit", "build", "dist", ".git"],
+  "strategies": {
+    ".js": {
+      "start": "/**",
+      "linePrefix": " * ",
+      "end": " */\n",
+      "licenseFile": "license-header"
+    },
+    ".ts": {
+      "start": "/**",
+      "linePrefix": " * ",
+      "end": " */\n",
+      "licenseFile": "license-header"
+    },
+    ".svelte": {
+      "start": "<!--",
+      "linePrefix": "  - ",
+      "end": "-->\n",
+      "licenseFile": "license-header"
+    },
+    ".html": {
+      "start": "<!--",
+      "end": "-->",
+      "linePrefix": "",
+      "licenseFile": "license-header-slim"
+    },
+    ".css": {
+      "start": "/*",
+      "linePrefix": " * ",
+      "end": " */\n",
+      "licenseFile": "license-header"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "@noisif/tailwind-config",
+  "version": "0.0.0",
+  "main": "tailwind.config.ts",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "exports": {
+    "./tailwind": "./tailwind.config.ts",
+    "./postcss": "./postcss.config.js",
+    "./global.css": "./src/index.css"
+  }
+}

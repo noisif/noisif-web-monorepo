@@ -1,0 +1,11 @@
+{
+  "name": "@noisif/prettier-config",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "dependencies": {
+    "prettier-plugin-svelte": "^4.1.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.1"
+  }
+}

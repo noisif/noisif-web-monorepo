@@ -1,0 +1,8 @@
+{
+  "extends": "@noisif/tsconfig/svelte.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "types": ["svelte"]
+  },
+  "include": ["src/**/*"]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "@noisif/copyright",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "noisif-copyright": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --clean",
+    "dev": "tsup src/index.ts --format esm --watch",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}
