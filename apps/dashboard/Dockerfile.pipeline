@@ -8,7 +8,7 @@ ENV ENTRY_DIR=/app/nss-d
 RUN mkdir -p /config /data && \
     chown -R nsuser:nsgroup /config /data
 
-COPY --chown=nsuser:nsgroup --from=builder /app/apps/dashboard/build/ $ENTRY_DIR
+COPY --chown=nsuser:nsgroup apps/dashboard/build/ $ENTRY_DIR
 COPY --chown=nsuser:nsgroup apps/dashboard/Caddyfile /etc/caddy/Caddyfile
 
 LABEL maintainer="NOISIF"
