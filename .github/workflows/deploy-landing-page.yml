@@ -3,7 +3,7 @@ name: Build and push landing page
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - "apps/landing-page/**"
       - "packages/**"
