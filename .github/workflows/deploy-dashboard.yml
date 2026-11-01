@@ -15,7 +15,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}/dashboard
+  IMAGE_NAME: noisif/noisif-dashboard
 
 jobs:
   build-and-push:

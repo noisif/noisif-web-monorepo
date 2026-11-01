@@ -15,7 +15,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}/landing-page
+  IMAGE_NAME: noisif/noisif-landing-page
 
 jobs:
   build-and-push:
