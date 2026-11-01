@@ -1,0 +1,12 @@
+:8080 {
+  root * /app/nss-d
+  encode zstd gzip
+
+  try_files {path} /index.html
+  file_server
+
+  @index {
+    path /index.html
+  }
+  header @index Cache-Control "no-store, no-cache, must-revalidate"
+}

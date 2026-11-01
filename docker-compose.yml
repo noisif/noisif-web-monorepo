@@ -1,0 +1,32 @@
+services:
+  noisif-dashboard:
+    container_name: noisif-dashboard
+    ports:
+      - "8080:8080"
+    build:
+      context: .
+      dockerfile: apps/dashboard/Dockerfile
+      secrets:
+        - source: dashboard_env
+          target: app_env
+    restart: unless-stopped
+
+  noisif-landing-page:
+    container_name: noisif-landing-page
+    ports:
+      - "8081:8080"
+    build:
+      context: .
+      dockerfile: apps/landing-page/Dockerfile
+      secrets:
+        - source: landing_page_env
+          target: app_env
+    env_file:
+      - apps/landing-page/.env.development
+    restart: unless-stopped
+
+secrets:
+  dashboard_env:
+    file: apps/dashboard/.env.development
+  landing_page_env:
+    file: apps/landing-page/.env.development

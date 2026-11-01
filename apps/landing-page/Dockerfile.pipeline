@@ -1,0 +1,21 @@
+FROM node:26-bookworm-slim
+
+WORKDIR /app
+
+ENV HOST=0.0.0.0
+ENV PORT=8080
+
+RUN groupadd --system nsgroup && \
+    useradd --system --gid nsgroup nsuser && \
+    chown nsuser:nsgroup /app
+
+COPY --chown=nsuser:nsgroup deploy-lp/node_modules ./node_modules
+COPY --chown=nsuser:nsgroup deploy-lp/package.json ./package.json
+COPY --chown=nsuser:nsgroup apps/landing-page/build ./build
+
+LABEL maintainer="NOISIF"
+
+EXPOSE $PORT
+USER nsuser
+
+ENTRYPOINT [ "node", "apps/landing-page/build/index.js" ]
