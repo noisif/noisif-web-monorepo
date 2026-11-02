@@ -43,7 +43,6 @@
 
   onMount(() => {
     if (gtmId) {
-      console.log('Uruchamiam GTM onMount. ID to:', gtmId);
       initDataLayer();
       injectGtmScript(gtmId);
     }
