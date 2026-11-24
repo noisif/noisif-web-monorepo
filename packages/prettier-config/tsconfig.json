@@ -1,0 +1,10 @@
+{
+  "extends": "@noisif/tsconfig/base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "types": ["node"]
+  },
+  "include": ["index.ts", "prettier.config.ts"],
+  "exclude": ["node_modules"]
+}

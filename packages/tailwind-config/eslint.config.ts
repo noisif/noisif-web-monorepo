@@ -15,9 +15,6 @@
  *
  * Please refer to the LICENSE file in the root directory for full restrictions.
  */
-export default {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {}
-  }
-};
+import { createBaseConfig } from '@noisif/eslint-config';
+
+export default createBaseConfig(import.meta.dirname);

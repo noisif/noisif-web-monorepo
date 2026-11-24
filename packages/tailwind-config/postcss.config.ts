@@ -15,6 +15,13 @@
  *
  * Please refer to the LICENSE file in the root directory for full restrictions.
  */
-import { baseConfig } from '@noisif/eslint-config';
+import type { Config } from 'postcss-load-config';
 
-export default baseConfig;
+export const postcssConfig: Config = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {}
+  }
+};
+
+export default postcssConfig;

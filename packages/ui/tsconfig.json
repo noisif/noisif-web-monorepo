@@ -1,8 +1,9 @@
 {
   "extends": "@noisif/tsconfig/svelte.json",
   "compilerOptions": {
-    "rootDir": "src",
-    "types": ["svelte"]
+    "noEmit": true,
+    "types": ["svelte", "node"]
   },
-  "include": ["src/**/*"]
+  "include": ["*.config.ts", "src"],
+  "exclude": ["node_modules"]
 }

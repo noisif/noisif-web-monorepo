@@ -15,6 +15,6 @@
  *
  * Please refer to the LICENSE file in the root directory for full restrictions.
  */
-import { baseConfig } from '@noisif/eslint-config';
+import { baseConfig } from '@noisif/prettier-config';
 
 export default baseConfig;

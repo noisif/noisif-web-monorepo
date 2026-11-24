@@ -15,35 +15,35 @@
  *
  * Please refer to the LICENSE file in the root directory for full restrictions.
  */
-import { createRequire } from "node:module";
+import { createRequire } from 'node:module';
+import type { PluginConfig } from '@ianvs/prettier-plugin-sort-imports';
+import type { Config } from 'prettier';
 
 const require = createRequire(import.meta.url);
 
-/** @type {import('prettier').Config
- * & import('@ianvs/prettier-plugin-sort-imports').PluginConfig} */
-export const baseConfig = {
+type PrettierConfig = Config & PluginConfig;
+
+export const baseConfig: PrettierConfig = {
   useTabs: false,
   tabWidth: 2,
   singleQuote: true,
-  trailingComma: "none",
+  trailingComma: 'none',
   printWidth: 100,
-  plugins: [require.resolve("@ianvs/prettier-plugin-sort-imports")],
-  importOrder: ["<BUILTIN_MODULES>", "<THIRD_PARTY_MODULES>", "^@noisif/(.*)$", "^[./]"],
-  importOrderParserPlugins: ["typescript", "decorators-legacy"],
+  plugins: [require.resolve('@ianvs/prettier-plugin-sort-imports')],
+  importOrder: ['<BUILTIN_MODULES>', '<THIRD_PARTY_MODULES>', '^@noisif/(.*)$', '^[./]'],
+  importOrderParserPlugins: ['typescript', 'decorators-legacy']
 };
 
-/** @type {import('prettier').Config
- * & import('@ianvs/prettier-plugin-sort-imports').PluginConfig} */
-export const svelteConfig = {
+export const svelteConfig: PrettierConfig = {
   ...baseConfig,
   plugins: [
-    require.resolve("@ianvs/prettier-plugin-sort-imports"),
-    require.resolve("prettier-plugin-svelte"),
+    require.resolve('@ianvs/prettier-plugin-sort-imports'),
+    require.resolve('prettier-plugin-svelte')
   ],
   overrides: [
     {
-      files: "*.svelte",
-      options: { parser: "svelte" },
-    },
-  ],
+      files: '*.svelte',
+      options: { parser: 'svelte' }
+    }
+  ]
 };

@@ -15,11 +15,6 @@
  *
  * Please refer to the LICENSE file in the root directory for full restrictions.
  */
-import { baseConfig } from "@noisif/eslint-config";
+import { createBaseConfig } from '@noisif/eslint-config';
 
-export default [
-  ...baseConfig,
-  {
-    ignores: ["**/node_modules/**"],
-  },
-];
+export default createBaseConfig(import.meta.dirname);

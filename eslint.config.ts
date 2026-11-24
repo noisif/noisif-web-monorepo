@@ -15,6 +15,9 @@
  *
  * Please refer to the LICENSE file in the root directory for full restrictions.
  */
-import { baseConfig } from '@noisif/eslint-config';
+import { defineConfig } from 'eslint/config';
+import { createBaseConfig } from '@noisif/eslint-config';
 
-export default baseConfig;
+export default defineConfig(createBaseConfig(import.meta.dirname), {
+  ignores: ['**/node_modules/**', '.turbo/**']
+});

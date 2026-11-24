@@ -8,7 +8,10 @@
   },
   "exports": {
     "./tailwind": "./tailwind.config.ts",
-    "./postcss": "./postcss.config.js",
+    "./postcss": "./postcss.config.ts",
     "./global.css": "./src/index.css"
+  },
+  "devDependencies": {
+    "postcss-load-config": "^6.0.1"
   }
 }
